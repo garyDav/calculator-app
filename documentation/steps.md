@@ -1,8 +1,12 @@
 # Pasos para desarrollar la app
 
-##### Enlaces de reslpado
+##### Enlaces de respaldo
 
 * https://docs.expo.dev/
+
+---
+
+###### Commit: `Nuevo Proyecto:...`
 
 ## Creando la applicación
 
@@ -11,6 +15,10 @@ pnpm create expo-app
 # ✔ What is your app named? … calculator-app
 # ✔ Select an Expo SDK version: › For learning with Expo Go (SDK 54)
 ```
+
+---
+
+###### Commit: `Estructura:...`
 
 ## Explicando el sistema de ficheros
 
@@ -107,3 +115,39 @@ Es un directorio de __propósito general__, para componentes de interfaz de usua
 8. Script: `./scripts/reset-project.tsx`
 
 Éste script nos permite resetear el proyecto o __eliminar todo el boilerplate__ mediante un __único comando__, sería lo mas cercado de utilizar el `--template blank-typescript`.
+
+---
+
+###### Commit: `Expo Rotuer:...`
+
+## Expo Router: `index` y `_layout`
+
+Realizaremos las modificaciones en una serie de pasos.
+
+1. Eliminaremos todos los archivos de `./app/*`, excepto `./app/_layout.tsx`
+
+2. Vaciamos el contenido de `_layout.tsx` y generamos un componente básico con `rnfe`, y cambiamos el nombre por `RootLayout`, aunque no importa que nombre pongamos.
+
+```tsx
+import { View, Text } from 'react-native'
+
+const RootLayout = () => {
+  return (
+    <View>
+      <Text>RootLayout</Text>
+    </View>
+  )
+}
+
+export default RootLayout
+```
+
+En este punto aún no le decimos a nuestro `_layout` donde renderizará el `index`.
+
+Para esto deberemos añadir `<Slot />` de `expo-router`.
+
+3. Eliminamos los archivos: `./componets`, `./hooks`, `./scripts`, reducimos `./constants/theme.ts`, quitamos el script de `package.json`,
+
+4. Añadimos __fuente__ desde nuestra carpeta estática `./assets/fonts/SpaceMono-Regular.ttf`
+
+---
