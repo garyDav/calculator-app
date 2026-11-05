@@ -11,7 +11,7 @@ const CalculatorApp = () => {
       {/* Resultados */}
       <View style={{ paddingHorizontal: 30, paddingBottom: 20 }}>
         <ThemeText variant="h1">
-          50 x 500000000000000
+          50 x 500
         </ThemeText>
         <ThemeText variant="h2">
           2500
